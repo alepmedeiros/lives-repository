@@ -1,0 +1,59 @@
+unit FileGenerator;
+
+interface
+
+uses
+  BuilderInterface;
+
+type
+  TFileGenerator = class(TInterfacedObject, iFileGenerator)
+    private
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iFileGenerator;
+      function Add(aValue : String) : iFileGenerator;
+      function FileName(aValue : String) : iFileGenerator;
+      function SaveToFile : iFileGenerator;
+      function FilePath(var aPath : String) : iFileGenerator;
+  end;
+
+implementation
+
+function TFileGenerator.Add(aValue: String): iFileGenerator;
+begin
+
+end;
+
+constructor TFileGenerator.Create;
+begin
+
+end;
+
+destructor TFileGenerator.Destroy;
+begin
+
+  inherited;
+end;
+
+function TFileGenerator.FileName(aValue: String): iFileGenerator;
+begin
+
+end;
+
+function TFileGenerator.FilePath(var aPath: String): iFileGenerator;
+begin
+
+end;
+
+class function TFileGenerator.New : iFileGenerator;
+begin
+  Result := Self.Create;
+end;
+
+function TFileGenerator.SaveToFile: iFileGenerator;
+begin
+
+end;
+
+end.

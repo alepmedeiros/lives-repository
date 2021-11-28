@@ -1,0 +1,2 @@
+http://luizricardo.org/2013/08/construindo-objetos-de-forma-inteligente-builder-pattern-e-fluent-interfaces/
+https://www.mballem.com/post/simplificando-com-builder-pattern/

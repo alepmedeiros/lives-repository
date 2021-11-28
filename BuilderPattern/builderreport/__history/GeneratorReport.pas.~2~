@@ -1,0 +1,81 @@
+unit GeneratorReport;
+
+interface
+
+uses
+  Datasnap.DBClient,
+  SHDocVw, BuilderInterface;
+
+type
+  iGeneretedReport = interface
+    function ClientDataSet(aClientDataSet: TClientDataSet): iGeneretedReport;
+    procedure Genereted(aWebBrowser: TWebBrowser);
+  end;
+
+  TGeneretedReport = class(TInterfacedObject, iGeneretedReport)
+  private
+    FDataSet : TClientDataSet;
+    FNameReport : String;
+    FPathResport : String;
+
+    procedure GeneretedReport;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New: iGeneretedReport;
+    function ClientDataSet(aClientDataSet: TClientDataSet): iGeneretedReport;
+    procedure Genereted(aWebBrowser: TWebBrowser);
+  end;
+
+implementation
+
+uses
+  Director, ConcretBuilder;
+
+function TGeneretedReport.ClientDataSet(
+  aClientDataSet: TClientDataSet): iGeneretedReport;
+begin
+  result := self;
+  FDataSet := aClientDataSet;
+end;
+
+constructor TGeneretedReport.Create;
+begin
+
+end;
+
+destructor TGeneretedReport.Destroy;
+begin
+
+  inherited;
+end;
+
+procedure TGeneretedReport.Genereted(aWebBrowser: TWebBrowser);
+begin
+
+end;
+
+procedure TGeneretedReport.GeneretedReport;
+var
+  lDirector : iDirector;
+  lConcretBuilder : iBuilder;
+  lFile : iFileGenerator;
+begin
+  lDirector := TDirector.New;
+  lConcretBuilder := TConcretBuilder.New(FDataSet.Data);
+
+  lDirector.Construct(lConcretBuilder);
+  lFile := lConcretBuilder.GetReport;
+
+  lFile
+    .FileName('fornecedor')
+    .FilePath(FPathResport)
+    .SaveToFile;
+end;
+
+class function TGeneretedReport.New: iGeneretedReport;
+begin
+  Result := Self.Create;
+end;
+
+end.

@@ -1,0 +1,22 @@
+unit BuilderInterface;
+
+interface
+
+type
+  iBuilder = interface
+    function BuilderHeader : iBuilder;
+    function BuilderBody : iBuilder;
+    function BuilderFooter : iBuilder;
+    function GetReport : iBuilder;
+  end;
+
+  iFileGenerator = interface
+    function Add(aValue : String) : iFileGenerator;
+    function FileName(aValue : String) : iFileGenerator;
+    function SaveToFile : iFileGenerator;
+    function FilePath(var aPath : String) : iFileGenerator;
+  end;
+
+implementation
+
+end.

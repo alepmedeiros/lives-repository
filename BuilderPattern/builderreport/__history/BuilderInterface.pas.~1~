@@ -1,0 +1,15 @@
+unit BuilderInterface;
+
+interface
+
+type
+  iBuilder = interface
+    function BuilderHeader : iBuilder;
+    function BuilderBody : iBuilder;
+    function BuilderFooter : iBuilder;
+    function GetReport : iBuilder;
+  end;
+
+implementation
+
+end.

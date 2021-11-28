@@ -1,0 +1,18 @@
+unit Pessoa;
+
+interface
+
+type
+  TPessoa = class
+  private
+  public
+    constructor Create;
+    destructor Destroy; override;
+    property Id : Integer read FId write FId;
+    property Nome : String read FNome write FNome;
+    property Endereco : TEndereco read FEndereco write FEndereco;
+  end;
+
+implementation
+
+end.

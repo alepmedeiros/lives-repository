@@ -1,0 +1,177 @@
+unit PessoaBuilder;
+
+interface
+
+uses
+  Telefone,
+  Endereco,
+  System.SysUtils,
+  System.Generics.Collections, TipoFone;
+
+type
+  TPessoa = class
+  type
+    TBuilder = class
+    private
+      FNome : String;
+      FSobreNome : String;
+      FLogradouro : String;
+      FNumero : String;
+      FComplemento : String;
+      FBairro : String;
+      FCidade : String;
+      FEstado : String;
+      FNascimento : TDateTime;
+      FTelefone : TTelefone;
+    public
+      function Nome(Value : String) : TBuilder;
+      function SobreNome(Value : String) : TBuilder;
+      function Nascimento(Value : TDateTime) : TBuilder;
+      function Logradouro(Value : String) : TBuilder;
+      function Numero(Value : String) : TBuilder;
+      function Complemento(Value : String) : TBuilder;
+      function Bairro(Value : String) : TBuilder;
+      function Cidade(Value : String) : TBuilder;
+      function Estado(Value : String) : TBuilder;
+      function Telefone(aDDD, aNumero : Integer; Tipo: TTipoFone) : TBuilder;
+      function Build : TPessoa;
+    end;
+  private
+    FSobreNome: String;
+    FDataNascimento: TDateTime;
+    FNome: String;
+    FEndereco: TEndereco;
+    FTelefone: TList<TTelefone>;
+  public
+    constructor Create(aBuilder : TBuilder);
+    destructor Destroy; override;
+    class function Builder : TBuilder;
+    property Nome: String read FNome write FNome;
+    property SobreNome : String read FSobreNome write FSobreNome;
+    property DataNascimento: TDateTime read FDataNascimento write FDataNascimento;
+    property Endereco: TEndereco read FEndereco write FEndereco;
+    property Telefone: TList<TTelefone> read FTelefone write FTelefone;
+  end;
+
+  TPessoaHelper = class helper for TPessoa
+    function ToString : String; overload;
+  end;
+
+implementation
+
+{ TPessoa }
+
+class function TPessoa.Builder: TBuilder;
+begin
+  Result := TBuilder.Create;
+end;
+
+constructor TPessoa.Create(aBuilder : TBuilder);
+begin
+  FTelefone := TList<TTelefone>.Create;
+  FEndereco:= TEndereco.Create;
+
+  FNome := aBuilder.FNome;
+  FSobreNome := aBuilder.FSobreNome;
+  FDataNascimento := aBuilder.FNascimento;
+  FEndereco.Logradouro := aBuilder.FLogradouro;
+  FEndereco.Numero := aBuilder.FNumero;
+  FEndereco.Complemento := aBuilder.FComplemento;
+  FEndereco.Bairro := aBuilder.FBairro;
+  FEndereco.Cidade := aBuilder.FCidade;
+  FEndereco.Estado := aBuilder.FEstado;
+  FTelefone.Add(aBuilder.FTelefone);
+end;
+
+destructor TPessoa.Destroy;
+begin
+  FTelefone.DisposeOf;
+  inherited;
+end;
+
+{ TPessoaHelper }
+
+function TPessoaHelper.ToString: String;
+var
+  I: Integer;
+begin
+  Result := 'Pessoa: {'+#13#10;
+  Result := Result + 'nome='+Self.Nome+#13#10;
+  Result := Result + 'sobrenome='+Self.SobreNome+#13#10;
+  Result := Result + 'nascimento='+DateToStr(Self.DataNascimento)+#13#10;
+  Result := Result + Self.Endereco.ToString+#13#10;
+  for I := 0 to Pred(Self.Telefone.Count) do
+    Result := Result + Self.Telefone[I].ToString+#13#13;
+  Result := Result + '}';
+end;
+
+{ TPessoa.TBuilder }
+
+function TPessoa.TBuilder.Bairro(Value: String): TBuilder;
+begin
+  FBairro := Value;
+  Result := Self;
+end;
+
+function TPessoa.TBuilder.Build: TPessoa;
+begin
+  Result := TPessoa.Create(Self);
+end;
+
+function TPessoa.TBuilder.Cidade(Value: String): TBuilder;
+begin
+  FCidade := Value;
+  Result := Self;
+end;
+
+function TPessoa.TBuilder.Complemento(Value: String): TBuilder;
+begin
+  FComplemento := Value;
+  Result := Self;
+end;
+
+function TPessoa.TBuilder.Estado(Value: String): TBuilder;
+begin
+  FEstado := Value;
+  Result := Self;
+end;
+
+function TPessoa.TBuilder.Logradouro(Value: String): TBuilder;
+begin
+  FLogradouro := Value;
+  Result := Self;
+end;
+
+function TPessoa.TBuilder.Nascimento(Value : TDateTime) : TBuilder;
+begin
+  FNascimento := Value;
+  Result := Self;
+end;
+
+function TPessoa.TBuilder.Nome(Value: String): TBuilder;
+begin
+  FNome := Value;
+  Result := Self;
+end;
+
+function TPessoa.TBuilder.Numero(Value: String): TBuilder;
+begin
+  FNumero := Value;
+  Result := Self;
+end;
+
+function TPessoa.TBuilder.SobreNome(Value: String): TBuilder;
+begin
+  FSobreNome := Value;
+  Result := Self;
+end;
+
+function TPessoa.TBuilder.Telefone(aDDD, aNumero: Integer;
+  Tipo: TTipoFone): TBuilder;
+begin
+  FTelefone.Create(aDDD,aNumero,Tipo);
+  Result := Self;
+end;
+
+end.
+

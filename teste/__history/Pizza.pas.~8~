@@ -1,0 +1,81 @@
+unit Pizza;
+
+interface
+
+type
+  TPizza = class
+  type
+    TBuilder = class
+    private
+      lBacon: Boolean;
+      lQueijo: Boolean;
+      lTomate: Boolean;
+      lTamanho: Integer;
+    public
+      constructor Create;
+      class function Builder(aTamanho: Integer): TBuilder;
+      function Queijo : TBuilder;
+      function Tomate : TBuilder;
+      function Bacon : TBuilder;
+      function Build : TPizza;
+    end;
+  private
+    FBacon: Boolean;
+    FQueijo: Boolean;
+    FTomate: Boolean;
+    FTamanho: Integer;
+    constructor Create(aBuilder: TBuilder);
+  public
+    property Tamanho: Integer read FTamanho write FTamanho;
+    property Queijo: Boolean read FQueijo write FQueijo;
+    property Tomate: Boolean read FTomate write FTomate;
+    property Bacon: Boolean read FBacon write FBacon;
+  end;
+
+implementation
+
+{ TPizza.TBuilder }
+
+function TPizza.TBuilder.Bacon: TBuilder;
+begin
+
+end;
+
+function TPizza.TBuilder.Build: TPizza;
+begin
+
+end;
+
+class function TPizza.TBuilder.Builder(aTamanho: Integer): TBuilder;
+begin
+  aTamanho :=
+  Result := Self.Create;
+end;
+
+constructor TPizza.TBuilder.Create;
+begin
+  aTomate :=
+end;
+
+function TPizza.TBuilder.Queijo: TBuilder;
+begin
+  aTomate := True;
+  Result := Self;
+end;
+
+function TPizza.TBuilder.Tomate: TBuilder;
+begin
+  Result := Self;
+end;
+
+{ TPizza }
+
+constructor TPizza.Create(aBuilder: TBuilder);
+begin
+  FTamanho := aBuilder.lTamanho;
+  FQueijo := aBuilder.lQueijo;
+  FTomate := aBuilder.lTomate;
+  FBacon := aBuilder.lBacon;
+end;
+
+end.

@@ -1,0 +1,40 @@
+unit PessoaBuilder;
+
+interface
+
+uses
+  Pessoa,
+  Endereco,
+  System.Generics.Collections,
+  telefone,
+  tipotelefone,
+  System.sysutils;
+
+type
+  TPessoaBuilder = class
+  private
+    FPessoa: TPessoa;
+    FEndereco: TEndereco;
+    FTelefone: TObjectList<TTelefone>;
+
+    procedure addTel(vDDD, vNumero: Integer; vTipo: TTipoTelefone);
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function Builder: TPessoaBuilder;
+    function Nome(aValue: String): TPessoaBuilder;
+    function SobreNome(Value: String): TPessoaBuilder;
+    function DataNascimento(Value: String): TPessoaBuilder;
+    function Logradouro(Value: String = ''): TPessoaBuilder;
+    function Numero(Value: String = ''): TPessoaBuilder;
+    function Complemento(Value: String = ''): TPessoaBuilder;
+    function Bairro(Value: String = ''): TPessoaBuilder;
+    function Cidade(Value: String = ''): TPessoaBuilder;
+    function Pais(Value: String = ''): TPessoaBuilder;
+    function telefone(vDDD, vTel: Integer; Tipo: TTipoTelefone): TPessoaBuilder;
+    function getPessoa: TPessoa;
+  end;
+
+implementation
+
+end.

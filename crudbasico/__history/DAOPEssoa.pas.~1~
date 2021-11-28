@@ -1,0 +1,16 @@
+unit DAOPEssoa;
+
+interface
+
+type
+  TDAOPessoa = class
+  private
+  public
+    constructor Create;
+    destructor Destroy; override;
+    procedure CreatePessao(aValue : TPEssoa);
+  end;
+
+implementation
+
+end.

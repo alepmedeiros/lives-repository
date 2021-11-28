@@ -1,0 +1,36 @@
+unit PessoaBuilderInterface;
+
+interface
+
+type
+  iBuilderPessoa = interface
+
+  end;
+
+  TBuilderPessoa = class(TInterfacedObject, iBuilderPessoa)
+    private
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iBuilderPessoa;
+  end;
+
+implementation
+
+constructor TBuilderPessoa.Create;
+begin
+
+end;
+
+destructor TBuilderPessoa.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TBuilderPessoa.New : iBuilderPessoa;
+begin
+  Result := Self.Create;
+end;
+
+end.

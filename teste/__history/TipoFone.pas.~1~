@@ -1,0 +1,24 @@
+unit TipoFone;
+
+interface
+
+uses
+  TypInfo;
+
+type
+  TipoFone = (RESIDENCIAL, CELULAR, COMERCIAL);
+
+  TipoFoneHelper = record helper for TipoFone
+    function ToString : String;
+  end;
+
+implementation
+
+{ TipoFoneHelper }
+
+function TipoFoneHelper.ToString: String;
+begin
+  Result := GetEnumName(TypeInfo(TipoFone), Integer(Self));
+end;
+
+end.

@@ -1,0 +1,77 @@
+unit Unit5;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm5 = class(TForm)
+    Memo1: TMemo;
+    Button1: TButton;
+    Button2: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form5: TForm5;
+
+implementation
+
+uses
+  Pessoa,Endereco,Telefone, System.Generics.Collections, TipoTelefone;
+
+{$R *.dfm}
+
+procedure TForm5.Button1Click(Sender: TObject);
+var
+  lPessoa : TPessoa;
+  LEndereco : TEndereco;
+  lTElefone : TObjectList<TTelefone>;
+begin
+  Memo1.Clear;
+  lPessoa := TPessoa.Create;
+
+  lPessoa.Nome := 'Alessandro';
+  lPessoa.SobreNome := 'Medeiros';
+  lPessoa.Dia := 25;
+  lPessoa.Mes := 12;
+  lPessoa.Ano := 80;
+
+  lEndereco := TEndereco.Create;
+  LEndereco.Logradouro := 'Rua dos testes';
+  lendereco.Numero := '20';
+  LEndereco.Complemento := 'casa 1';
+  LEndereco.Cidade := 'Sao Paulo';
+  lendereco.Bairro := 'Centro';
+  LEndereco.Pais := 'Brasil';
+
+  lPessoa.Endereco := LEndereco;
+
+  lTElefone := TObjectList<TTelefone>.Create;
+
+  lTElefone.Add(TTelefone.Create);
+  lTelefone.Items[0].DDD := 11;
+  lTelefone.Items[0].Numero := 22233344;
+  lTelefone.Items[0].Tipo := RESIDENCIAL;
+
+  lTElefone.Add(TTelefone.Create);
+  lTelefone.Items[1].DDD := 12;
+  lTelefone.Items[1].Numero := 999999999;
+  lTelefone.Items[1].Tipo := CELULAR;
+
+  lPessoa.Telefene := lTelefone;
+
+  Memo1.Lines.Add(lPessoa.ToString);
+
+  lPessoa.DisposeOf;
+  LEndereco.DisposeOf;
+  lTElefone.DisposeOf;
+end;
+
+end.

@@ -1,0 +1,67 @@
+unit Pessoa;
+
+interface
+
+uses
+  Telefone,
+  Endereco,
+  System.SysUtils,
+  System.Generics.Collections;
+
+type
+  TPessoa = class
+  private
+    FSobreNome: String;
+    FDataNascimento: TDateTime;
+    FNome: String;
+    FEndereco: TEndereco;
+    FTelefone: TList<TTelefone>;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    property Nome: String read FNome write FNome;
+    property SobreNome : String read FSobreNome write FSobreNome;
+    property DataNascimento: TDateTime read FDataNascimento write FDataNascimento;
+    property Endereco: TEndereco read FEndereco write FEndereco;
+    property Telefone: TList<TTelefone> read FTelefone write FTelefone;
+  end;
+
+  TPessoaHelper = class helper for TPessoa
+    function ToString : String; overload;
+  end;
+
+implementation
+
+{ TPessoa }
+
+constructor TPessoa.Create;
+begin
+  FTelefone := TList<TTelefone>.Create;
+  FEndereco: TEndereco;
+end;
+
+destructor TPessoa.Destroy;
+begin
+  FTelefone.DisposeOf;
+  inherited;
+end;
+
+{ TPessoaHelper }
+
+function TPessoaHelper.ToString: String;
+var
+  I: Integer;
+begin
+  Result := 'Pessoa: {'+#13#10;
+  Result := Result + 'nome='+Self.Nome+#13#10;
+  Result := Result + ',sobrenome='+Self.SobreNome+#13#10;
+  Result := Result + ',nascimento='+DateToStr(Self.DataNascimento)+#13#10;
+  Result := Result + ','+Self.Endereco.ToString+','+#13#10;
+  Result := Result + ',telefone ['+#13#10;
+  for I := 0 to Pred(Self.Telefone.Count) do
+    Result := Result + Self.Telefone[I].ToString+','+#13#13;
+  Result := Result + ']'+#13#10;
+  Result := Result + '}';
+end;
+
+end.

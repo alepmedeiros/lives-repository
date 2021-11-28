@@ -1,0 +1,24 @@
+unit Pessoa;
+
+interface
+
+uses
+  System.SysUtils,
+  System.Generics.Collections;
+
+type
+  TPessoa = class
+  private
+  public
+    property Nome : String;
+    property SobreNome : String;
+    Property Dia : INteger;
+    property Mes : Integer;
+    property Ano : Integer;
+    property Endereco : TEndereco;
+    property Telefene : TObjectList<TTelefone>;
+  end;
+
+implementation
+
+end.

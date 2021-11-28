@@ -1,0 +1,18 @@
+object DataModule2: TDataModule2
+  OldCreateOrder = False
+  Height = 150
+  Width = 215
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'Database=C:\Users\Criacao\Desktop\crudbasico\database\dados.sdb3'
+      'LockingMode=Normal'
+      'DriverID=SQLite')
+    Left = 80
+    Top = 48
+  end
+  object FDQuery1: TFDQuery
+    Connection = FDConnection1
+    Left = 160
+    Top = 16
+  end
+end

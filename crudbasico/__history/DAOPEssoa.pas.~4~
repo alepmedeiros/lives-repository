@@ -1,0 +1,38 @@
+unit DAOPEssoa;
+
+interface
+
+uses
+  Pessoa, Connection;
+
+type
+  TDAOPessoa = class
+  private
+    FConexao : TConexao;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    procedure CreatePessao(aValue : TPEssoa);
+  end;
+
+implementation
+
+{ TDAOPessoa }
+
+constructor TDAOPessoa.Create;
+begin
+  FConexao := TConexao.Create(nil);
+end;
+
+procedure TDAOPessoa.CreatePessao(aValue: TPEssoa);
+begin
+
+end;
+
+destructor TDAOPessoa.Destroy;
+begin
+  FConexao.DisposeOf;
+  inherited;
+end;
+
+end.

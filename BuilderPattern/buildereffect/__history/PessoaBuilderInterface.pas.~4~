@@ -1,0 +1,147 @@
+unit PessoaBuilderInterface;
+
+interface
+
+uses
+  Pessoa,
+  TipoTelefone,
+  Endereco,
+  Telefone,
+  System.SysUtils,
+  System.Generics.Collections;
+
+type
+  iBuilderPessoa = interface
+    function Nome(Value: String): iBuilderPessoa;
+    function SobreNome(Value: String): iBuilderPessoa;
+    function DataNascimento(Value: String): iBuilderPessoa;
+    function Logradouro(Value: String = ''): iBuilderPessoa;
+    function Numero(Value: String = ''): iBuilderPessoa;
+    function Complemento(Value: String = ''): iBuilderPessoa;
+    function Bairro(Value: String = ''): iBuilderPessoa;
+    function Cidade(Value: String = ''): iBuilderPessoa;
+    function Pais(Value: String = ''): iBuilderPessoa;
+    function telefone(vDDD, vTel: Integer; Tipo: TTipoTelefone): iBuilderPessoa;
+    function getPessoa: TPessoa;
+  end;
+
+  TBuilderPessoa = class(TInterfacedObject, iBuilderPessoa)
+  private
+    FPessoa: TPessoa;
+    FEndereco: TEndereco;
+    FTelefone: TObjectList<TTelefone>;
+
+    procedure addTel(vDDD, vNumero: Integer; vTipo: TTipoTelefone);
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New: iBuilderPessoa;
+    function Nome(Value: String): iBuilderPessoa;
+    function SobreNome(Value: String): iBuilderPessoa;
+    function DataNascimento(Value: String): iBuilderPessoa;
+    function Logradouro(Value: String = ''): iBuilderPessoa;
+    function Numero(Value: String = ''): iBuilderPessoa;
+    function Complemento(Value: String = ''): iBuilderPessoa;
+    function Bairro(Value: String = ''): iBuilderPessoa;
+    function Cidade(Value: String = ''): iBuilderPessoa;
+    function Pais(Value: String = ''): iBuilderPessoa;
+    function telefone(vDDD, vTel: Integer; Tipo: TTipoTelefone): iBuilderPessoa;
+    function getPessoa: TPessoa;
+  end;
+
+implementation
+
+procedure TBuilderPessoa.addTel(vDDD, vNumero: Integer; vTipo: TTipoTelefone);
+var
+  I : Integer;
+begin
+  FTelefone.Add(TTelefone.Create);
+  I := FTelefone.Count -1;
+  FTelefone.Items[I].DDD := vDDD;
+  FTelefone.Items[I].Numero := vNumero;
+  FTelefone.Items[I].Tipo := vTipo;
+end;
+
+function TBuilderPessoa.Bairro(Value: String): iBuilderPessoa;
+begin
+  FEndereco.Bairro := Value;
+  Result := Self;
+end;
+
+function TBuilderPessoa.Cidade(Value: String): iBuilderPessoa;
+begin
+  FEndereco.Cidade := Value;
+  Result := Self;
+end;
+
+function TBuilderPessoa.Complemento(Value: String): iBuilderPessoa;
+begin
+  FEndereco.Complemento := Value;
+  Result := Self;
+end;
+
+constructor TBuilderPessoa.Create;
+begin
+  FPessoa := TPessoa.Create;
+  FEndereco := TEndereco.Create;
+  FTelefone := TObjectList<TTelefone>.Create;
+end;
+
+function TBuilderPessoa.DataNascimento(Value: String): iBuilderPessoa;
+begin
+  FPessoa.Dia := Copy(Value,1,2).ToInteger;
+  FPessoa.Mes := Copy(Value,4,2).ToInteger;
+  FPessoa.Ano := Copy(Value,7,4).ToInteger;
+  Result := Self;
+end;
+
+destructor TBuilderPessoa.Destroy;
+begin
+  FPessoa.DisposeOf;
+  FEndereco.DisposeOf;
+  FTelefone.DisposeOf;
+  inherited;
+end;
+
+function TBuilderPessoa.getPessoa: TPessoa;
+begin
+
+end;
+
+function TBuilderPessoa.Logradouro(Value: String): iBuilderPessoa;
+begin
+
+end;
+
+class function TBuilderPessoa.New: iBuilderPessoa;
+begin
+  Result := Self.Create;
+end;
+
+function TBuilderPessoa.Nome(Value: String): iBuilderPessoa;
+begin
+
+end;
+
+function TBuilderPessoa.Numero(Value: String): iBuilderPessoa;
+begin
+
+end;
+
+function TBuilderPessoa.Pais(Value: String): iBuilderPessoa;
+begin
+
+end;
+
+function TBuilderPessoa.SobreNome(Value: String): iBuilderPessoa;
+begin
+
+end;
+
+function TBuilderPessoa.telefone(vDDD, vTel: Integer; Tipo: TTipoTelefone)
+  : iBuilderPessoa;
+begin
+
+end;
+
+end.
