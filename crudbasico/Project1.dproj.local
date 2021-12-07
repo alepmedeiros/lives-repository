@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2021/11/16 15:05:27.361,=C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2021/11/16 15:06:16.451,C:\Users\Criacao\Desktop\crudbasico\Unit1.pas=C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2021/11/16 15:06:16.451,C:\Users\Criacao\Desktop\crudbasico\Unit1.dfm=C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2021/11/16 15:06:19.098,C:\Users\Criacao\Desktop\crudbasico\Project1.dproj=C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
-    <Transaction>2021/11/16 15:07:46.680,=C:\Users\Criacao\Desktop\crudbasico\Unit2.pas</Transaction>
-    <Transaction>2021/11/16 15:10:01.569,C:\Users\Criacao\Desktop\crudbasico\Pessoa.pas=C:\Users\Criacao\Desktop\crudbasico\Unit2.pas</Transaction>
-    <Transaction>2021/11/16 15:10:05.006,=C:\Users\Criacao\Desktop\crudbasico\Unit2.pas</Transaction>
-    <Transaction>2021/11/16 15:11:19.958,C:\Users\Criacao\Desktop\crudbasico\Endereco.pas=C:\Users\Criacao\Desktop\crudbasico\Unit2.pas</Transaction>
-    <Transaction>2021/11/16 15:29:28.816,=C:\Users\Criacao\Desktop\crudbasico\Unit2.pas</Transaction>
-    <Transaction>2021/11/16 15:29:46.393,C:\Users\Criacao\Desktop\crudbasico\Connection.dfm=C:\Users\Criacao\Desktop\crudbasico\Unit2.dfm</Transaction>
-    <Transaction>2021/11/16 15:29:46.393,C:\Users\Criacao\Desktop\crudbasico\Connection.pas=C:\Users\Criacao\Desktop\crudbasico\Unit2.pas</Transaction>
-    <Transaction>2021/11/16 15:40:27.147,=C:\Users\Criacao\Desktop\crudbasico\Unit2.pas</Transaction>
-    <Transaction>2021/11/16 15:42:03.130,C:\Users\Criacao\Desktop\crudbasico\DAOPEssoa.pas=C:\Users\Criacao\Desktop\crudbasico\Unit2.pas</Transaction>
+	<Transactions>
+    <Transaction>2021/11/16 15:05:27.000.361,=C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/11/16 15:06:16.000.451,C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\Criacao\Desktop\crudbasico\Unit1.pas</Transaction>
+    <Transaction>2021/11/16 15:06:16.000.451,C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\Criacao\Desktop\crudbasico\Unit1.dfm</Transaction>
+    <Transaction>2021/11/16 15:06:19.000.098,C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\Criacao\Desktop\crudbasico\Project1.dproj</Transaction>
+    <Transaction>2021/11/16 15:07:46.000.680,=C:\Users\Criacao\Desktop\crudbasico\Unit2.pas</Transaction>
+    <Transaction>2021/11/16 15:10:01.000.569,C:\Users\Criacao\Desktop\crudbasico\Unit2.pas=C:\Users\Criacao\Desktop\crudbasico\Pessoa.pas</Transaction>
+    <Transaction>2021/11/16 15:10:05.000.006,=C:\Users\Criacao\Desktop\crudbasico\Unit2.pas</Transaction>
+    <Transaction>2021/11/16 15:11:19.000.958,C:\Users\Criacao\Desktop\crudbasico\Unit2.pas=C:\Users\Criacao\Desktop\crudbasico\Endereco.pas</Transaction>
+    <Transaction>2021/11/16 15:29:28.000.816,=C:\Users\Criacao\Desktop\crudbasico\Unit2.pas</Transaction>
+    <Transaction>2021/11/16 15:29:46.000.393,C:\Users\Criacao\Desktop\crudbasico\Unit2.dfm=C:\Users\Criacao\Desktop\crudbasico\Connection.dfm</Transaction>
+    <Transaction>2021/11/16 15:29:46.000.393,C:\Users\Criacao\Desktop\crudbasico\Unit2.pas=C:\Users\Criacao\Desktop\crudbasico\Connection.pas</Transaction>
+    <Transaction>2021/11/16 15:40:27.000.147,=C:\Users\Criacao\Desktop\crudbasico\Unit2.pas</Transaction>
+    <Transaction>2021/11/16 15:42:03.000.130,C:\Users\Criacao\Desktop\crudbasico\Unit2.pas=C:\Users\Criacao\Desktop\crudbasico\DAOPEssoa.pas</Transaction>
   </Transactions>
 </BorlandProject>

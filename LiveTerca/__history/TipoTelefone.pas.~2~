@@ -1,0 +1,31 @@
+unit TipoTelefone;
+
+interface
+
+uses
+  System.SysUtils,
+  TypInfo;
+
+type
+  TTipoTelefone = (COMERCIAL, RESIDENCIAL, CELULAR);
+
+  TTipoTelefoneHelper = record helper for TTipoTelefone
+    function ToString : String;
+    function isTrue(Value : String) : Boolean;
+  end;
+
+implementation
+
+{ TTipoTelefoneHelper }
+
+function TTipoTelefoneHelper.isTrue(Value: String): Boolean;
+begin
+  Result :=  not (Self.ToString.Equals(Value));
+end;
+
+function TTipoTelefoneHelper.ToString: String;
+begin
+  Result := GetEnumName(TypeInfo(TTipoTelefone), Integer(Self));
+end;
+
+end.

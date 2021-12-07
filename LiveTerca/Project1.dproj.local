@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/12/01 10:20:51.000.285,=C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/12/06 13:41:33.210,=C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/12/06 13:42:47.278,C:\MyRepository\examplo-octo-memory\LiveTerca\Unit1.dfm=C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2021/12/06 13:42:47.278,C:\MyRepository\examplo-octo-memory\LiveTerca\Unit1.pas=C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/12/06 13:42:50.186,C:\MyRepository\examplo-octo-memory\LiveTerca\Project1.dproj=C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2021/12/06 13:45:35.652,=C:\MyRepository\examplo-octo-memory\LiveTerca\Unit2.pas</Transaction>
+    <Transaction>2021/12/06 14:04:38.767,C:\MyRepository\examplo-octo-memory\LiveTerca\Pessoa.pas=C:\MyRepository\examplo-octo-memory\LiveTerca\Unit2.pas</Transaction>
+    <Transaction>2021/12/06 14:04:51.050,=C:\MyRepository\examplo-octo-memory\LiveTerca\Unit2.pas</Transaction>
+    <Transaction>2021/12/06 14:09:37.220,C:\MyRepository\examplo-octo-memory\LiveTerca\Telefone.pas=C:\MyRepository\examplo-octo-memory\LiveTerca\Unit2.pas</Transaction>
+    <Transaction>2021/12/06 14:09:41.530,=C:\MyRepository\examplo-octo-memory\LiveTerca\Unit2.pas</Transaction>
+    <Transaction>2021/12/06 14:11:33.435,C:\MyRepository\examplo-octo-memory\LiveTerca\TipoTelefone.pas=C:\MyRepository\examplo-octo-memory\LiveTerca\Unit2.pas</Transaction>
+    <Transaction>2021/12/06 14:26:54.965,=C:\MyRepository\examplo-octo-memory\LiveTerca\Unit2.pas</Transaction>
+    <Transaction>2021/12/06 15:03:33.480,=C:\MyRepository\examplo-octo-memory\LiveTerca\Connection.pas</Transaction>
+    <Transaction>2021/12/06 15:03:35.742,=C:\MyRepository\examplo-octo-memory\LiveTerca\DAOPEssoa.pas</Transaction>
+    <Transaction>2021/12/06 15:24:19.666,C:\MyRepository\examplo-octo-memory\LiveTerca\Connection.pas=</Transaction>
+    <Transaction>2021/12/06 15:24:19.707,C:\MyRepository\examplo-octo-memory\LiveTerca\DAOPEssoa.pas=</Transaction>
+    <Transaction>2021/12/06 16:15:32.462,=C:\MyRepository\examplo-octo-memory\LiveTerca\Connection.pas</Transaction>
+    <Transaction>2021/12/06 16:15:32.509,=C:\MyRepository\examplo-octo-memory\LiveTerca\DAOPEssoa.pas</Transaction>
+    <Transaction>2021/12/06 16:21:38.598,C:\MyRepository\examplo-octo-memory\LiveTerca\Connection.pas=</Transaction>
+    <Transaction>2021/12/06 16:21:38.617,C:\MyRepository\examplo-octo-memory\LiveTerca\DAOPEssoa.pas=</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5"/>
+	</ActiveMobileDevice>
+</BorlandProject>
